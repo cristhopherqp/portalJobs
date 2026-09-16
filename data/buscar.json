@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Ingeniero de Software",
+    "company": "Tech Solutions Inc.",
+    "technology": "Rust",
+    "location": "remoto",
+    "contract": "Tiempo completo",
+    "level": "Senior",
+    "description": "Buscamos un ingeniero de software con experiencia en React."
+  },
+  {
+    "id": 2,
+    "title": "Analista de Datos",
+    "company": "Data Driven Co.",
+    "technology": ["Python", "React", "Go"],
+    "location": "   ",
+    "contract": "Tiempo completo",
+    "level": "Semi-Senior",
+    "description": "Búsqueda de analista con manejo de SQL y Python."
+  },
+  {
+    "id": 3,
+    "title": "Frontend Developer",
+    "company": "Pixel Studio",
+    "technology": ["Vue.js", " "],
+    "location": ["Remoto", "remoto"],
+    "contract": "Medio tiempo",
+    "level": "Junior",
+    "description": "Desarrollo de interfaces accesibles con Vue.js."
+  }
+]

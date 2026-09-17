@@ -6,11 +6,11 @@ import { initDropdownEvents } from "./ui/dropdown.js";
 
 const FILTER_CATEGORIES = ["technology", "location", "contract", "level"];
 
-export const activeFilters = {
-  technology: null,
-  location: null,
-  contract: null,
-  level: null
+const activeFilters = {
+  technology: new Set(),
+  location: new Set(),
+  contract: new Set(),
+  level: new Set()
 };
 
 let allJobs = [];
@@ -38,4 +38,3 @@ const init = async () => {
 };
 
 init();
-

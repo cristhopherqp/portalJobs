@@ -1,14 +1,10 @@
-const newArray = ["Minjeong", "Winter", "Kim", "Roy"]; 
-
-const saludar = (data) => {
-  data.forEach(elem => {
-    console.log(`Hola ${elem}`)
-  })
+const activeFilters = {
+  technology: new Set(),
+  location: new Set(),
+  contract: new Set(),
+  level: new Set()
 };
 
-const decirHola = (callback) => {
-  console.log("Esta es la primera función: ");
-  callback(newArray);
-}
+activeFilters.contract.add("Kim Minjeong");
 
-decirHola(saludar);
+console.log(activeFilters)

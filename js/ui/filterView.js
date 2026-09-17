@@ -12,18 +12,43 @@ export const renderFilters = (filters) => {
     const options = ["Todos",...values]
 
     options.forEach(value => {
-      const li = document.createElement("li");
-      const button = document.createElement("button");
+      const li = Object.assign(document.createElement("li"), {
+        clasName: "dropdown-item"
+      });
+  
+      const label = Object.assign(document.createElement("label"), {
+        clasName: "dropdown-checkbox-label"
+      });
       
-      button.type = "button";
-      button.className = "dropdown-item";
-      button.textContent = value;
+      const input = Object.assign(document.createElement("input"), {
+        type: "checkbox",
+        className: "dropdown-checkbox",
+        value: value
+      });
+      
+      const span = Object.assign(document.createElement("span"), {
+        className: "dropdown-text",
+        textContent: value
+      });
 
-      li.appendChild(button);
-      fragment.appendChild(li);
-    });
+      label.append(input, span);
+      li.append(label);
+    })
     
     menuList.replaceChildren(fragment);
+
+    // options.forEach(value => {
+    //   const li = document.createElement("li");
+    //   const button = document.createElement("button");
+      
+    //   button.type = "button";
+    //   button.className = "dropdown-item";
+    //   button.textContent = value;
+
+    //   li.appendChild(button);
+    //   fragment.appendChild(li);
+    // });
+  
   });
 };
 

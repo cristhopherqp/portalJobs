@@ -145,7 +145,67 @@ form {
 }
 
 /* Elementos de la lista */
+
 .dropdown-item {
+  list-style: none;
+}
+
+/* Área cliqueable completa */
+.dropdown-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, opacity 0.2s ease;
+}
+
+/* 1. Cuando el checkbox esté seleccionado, toda la fila se vuelve translúcida */
+.dropdown-checkbox-label:has(.dropdown-checkbox:checked) {
+  opacity: 0.6; /* Ajusta este valor (0.4 - 0.7) según qué tan transparente lo quieras */
+}
+
+.dropdown-checkbox-label:hover {
+  background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.05));
+}
+
+/* Texto a la izquierda */
+.dropdown-text {
+  order: 1; /* Garantiza que vaya al inicio (izquierda) */
+  font-size: 0.9rem;
+  color: var(--color-text, #1f2937);
+}
+
+/* Checkbox al extremo derecho */
+.dropdown-checkbox {
+  order: 2; /* Garantiza que vaya al final (derecha) */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Pega el check al borde derecho */
+}
+
+/* Check gris translúcido */
+.dropdown-checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid rgba(100, 116, 139, 0.7); /* Gris con opacidad */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+
+/* .dropdown-item {
   width: 100%;
   text-align: left;
   background: transparent;
@@ -160,7 +220,7 @@ form {
     background-color: var(--input-bg);
     color: var(--text-primary);
   }
-}
+} */
 
 /* Resultados y Tarjetas de Empleo */
 .results-section {

@@ -13,6 +13,8 @@ const activeFilters = {
   level: new Set()
 };
 
+console.log(activeFilters);
+
 let allJobs = [];
 
 const init = async () => {
@@ -22,9 +24,9 @@ const init = async () => {
 
     const filteredJobs = filterJobs(allJobs, activeFilters);
     //console.log("Resultados filtrados:", filteredJobs);
-    console.log("Filtros actuales:", activeFilters);
-    console.log("Total de empleos disponibles para filtrar:", allJobs.length);
-    console.log("\n\n\n\n __________")
+    // console.log("Filtros actuales:", activeFilters);
+    // console.log("Total de empleos disponibles para filtrar:", allJobs.length);
+    // console.log("\n\n\n\n __________")
   });
   
   try {

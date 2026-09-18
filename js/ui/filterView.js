@@ -17,7 +17,7 @@ export const renderFilters = (filters) => {
       });
   
       const label = Object.assign(document.createElement("label"), {
-        clasName: "dropdown-checkbox-label"
+        className: "dropdown-checkbox-label"
       });
       
       const input = Object.assign(document.createElement("input"), {
@@ -33,6 +33,7 @@ export const renderFilters = (filters) => {
 
       label.append(input, span);
       li.append(label);
+      fragment.appendChild(li);
     })
     
     menuList.replaceChildren(fragment);

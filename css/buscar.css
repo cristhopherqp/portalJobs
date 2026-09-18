@@ -125,11 +125,11 @@ form {
 
 /* Menú desplegable oculto por defecto */
 .dropdown-menu {
-  display: none; /* Se activa con clase .show o selector :focus-within con JS */
+  display: none;
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  min-width: 12rem;
+  min-width: 10rem;
   background-color: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -145,7 +145,6 @@ form {
 }
 
 /* Elementos de la lista */
-
 .dropdown-item {
   list-style: none;
 }
@@ -162,20 +161,18 @@ form {
   transition: background-color 0.15s ease, opacity 0.2s ease;
 }
 
-/* 1. Cuando el checkbox esté seleccionado, toda la fila se vuelve translúcida */
 .dropdown-checkbox-label:has(.dropdown-checkbox:checked) {
-  opacity: 0.6; /* Ajusta este valor (0.4 - 0.7) según qué tan transparente lo quieras */
+  background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.35));
 }
 
 .dropdown-checkbox-label:hover {
-  background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.05));
+  background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.35));
 }
 
-/* Texto a la izquierda */
 .dropdown-text {
-  order: 1; /* Garantiza que vaya al inicio (izquierda) */
+  order: 1;
   font-size: 0.9rem;
-  color: var(--color-text, #1f2937);
+  color: white
 }
 
 /* Checkbox al extremo derecho */
@@ -198,12 +195,11 @@ form {
   display: block;
   width: 5px;
   height: 10px;
-  border: solid rgba(100, 116, 139, 0.7); /* Gris con opacidad */
+  border: solid rgba(255, 255, 255); 
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   margin-top: -2px;
 }
-
 
 /* .dropdown-item {
   width: 100%;

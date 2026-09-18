@@ -9,11 +9,11 @@ export const renderFilters = (filters) => {
     
     const fragment = document.createDocumentFragment();
 
-    const options = ["Todos",...values]
+    const options = [...values]
 
     options.forEach(value => {
       const li = Object.assign(document.createElement("li"), {
-        clasName: "dropdown-item"
+        className: "dropdown-item"
       });
   
       const label = Object.assign(document.createElement("label"), {
@@ -23,7 +23,8 @@ export const renderFilters = (filters) => {
       const input = Object.assign(document.createElement("input"), {
         type: "checkbox",
         className: "dropdown-checkbox",
-        value: value
+        value: value,
+        name: key
       });
       
       const span = Object.assign(document.createElement("span"), {

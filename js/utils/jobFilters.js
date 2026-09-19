@@ -7,7 +7,6 @@ export const filterJobs = (jobs, selectedFilters) => {
 
       const item = elem[key] === value;
       if(item){
-        // console.log(elem)
       }
 
 

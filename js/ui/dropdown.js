@@ -3,7 +3,7 @@ const closeAllMenus = () => {
 };
 
 export const initDropdownEvents = () => {
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     const item = e.target.closest(".dropdown-menu");
     const toggleBtn = e.target.closest(".dropdown-btn");
 
@@ -21,9 +21,19 @@ export const initDropdownEvents = () => {
   });
 };
 
-export const selectedElements =() => {
-  document.addEventListener("change", {
+export const selectedElements = (onFilterChange) => {
+  document.addEventListener("change", (e) => {
 
+    if (!e.target.matches(".dropdown-checkbox")) return;
+    
+    const category = e.target.name;
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    if(onFilterChange){
+      onFilterChange(category, value, isChecked)
+    }
+    
   });
 };
 

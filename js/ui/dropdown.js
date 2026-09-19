@@ -21,11 +21,10 @@ export const initDropdownEvents = () => {
   });
 };
 
-export const selectedElements = (onFilterChange) => {
+export const initFilterChangeEvents = (onFilterChange) => {
   document.addEventListener("change", (e) => {
-
     if (!e.target.matches(".dropdown-checkbox")) return;
-    
+
     const category = e.target.name;
     const value = e.target.value;
     const isChecked = e.target.checked;

@@ -35,13 +35,3 @@ export const initFilterChangeEvents = (onFilterChange) => {
     
   });
 };
-
-  // const dropdown = item.closest(".dropdown");
-  // const category = dropdown.querySelector(".dropdown-menu").dataset.filter;
-  // const selectedValue = item.textContent.trim();
-
-  // console.log(item);
-
-  // if (onSelect) {
-  //   onSelect(category, selectedValue);
-  // }

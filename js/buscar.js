@@ -1,7 +1,7 @@
 import { fetchJobs } from "./api/jobsApi.js";
 import { extractFilters } from "./utils/filters.js"
 import { filterJobs } from "./utils/jobFilters.js";
-import { renderFilters, renderFiltersError } from "./ui/filterView.js";
+import { renderFilters, renderFiltersError, updateFilterButtonLabel } from "./ui/filterView.js";
 import { initDropdownEvents, initFilterChangeEvents } from "./ui/dropdown.js";
 
 const FILTER_CATEGORIES = ["technology", "location", "contract", "level"];
@@ -23,12 +23,13 @@ const init = async () => {
     const categorySet = activeFilters[cat];
     if(!categorySet) return;
 
-    if (isChecked) {
-      categorySet.add(value);
-      return;
-    }
-    categorySet.delete(value);
+    const action = isChecked ? "add" : "delete";
+    categorySet[action](value);
+
+    updateFilterButtonLabel(activeFilters);
   });
+  
+
   
   try {
     allJobs = await fetchJobs();

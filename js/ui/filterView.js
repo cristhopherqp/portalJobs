@@ -65,7 +65,6 @@ export const renderFiltersError = () => {
 };
 
 export const updateFilterButtonLabel = (activeFilters) => {
-
   document.querySelectorAll(".dropdown").forEach(dropdown => {
     const btn = dropdown.querySelector(".dropdown-btn");
     const menu = dropdown.querySelector(".dropdown-menu");
@@ -86,6 +85,5 @@ export const updateFilterButtonLabel = (activeFilters) => {
 
     span.textContent = defaultLabel;
   });
-
 };
 

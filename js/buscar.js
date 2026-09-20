@@ -4,9 +4,10 @@ import { filterJobs } from "./utils/jobFilters.js";
 import { renderFilters, renderFiltersError, updateFilterButtonLabel } from "./ui/filterView.js";
 import { initDropdownEvents, initFilterChangeEvents } from "./ui/dropdown.js";
 
-const FILTER_CATEGORIES = ["technology", "location", "contract", "level"];
+const FILTER_CATEGORIES = ["company", "technology", "location", "contract", "level"];
 
 const activeFilters = {
+  company: new Set(),
   technology: new Set(),
   location: new Set(),
   contract: new Set(),

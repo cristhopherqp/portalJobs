@@ -20,14 +20,14 @@ const init = async () => {
 
   initDropdownEvents();
 
-  initFilterChangeEvents((cat, value, isChecked) => {
-    const categorySet = activeFilters[cat];
+  initFilterChangeEvents((category, value, isChecked) => {
+    const categorySet = activeFilters[category];
     if(!categorySet) return;
 
     const action = isChecked ? "add" : "delete";
     categorySet[action](value);
 
-    updateFilterButtonLabel(activeFilters);
+    updateFilterButtonLabel(category, categorySet.size);
   });
   
 

@@ -1,31 +1,19 @@
 export const filterJobs = (jobs, selectedFilters) => {
+  const selectedCategories = [];
+  Object.entries(selectedFilters).forEach(([key, value]) => {
+    if (value.size > 0){
+      selectedCategories.push(key)
+    }
+  });
+  Object.entries(jobs).forEach(([key, job]) => {
+    selectedCategories.forEach(category => {
 
+      const techSet = [job[category]].flat(Infinity).map(elem => String(elem).toLowerCase().trim());
+      const selectedValues = selectedFilters[category];
 
-  jobs.forEach(elem => {
-    
-    Object.entries(selectedFilters).forEach(([key, value]) => {
-
-      const item = elem[key] === value;
-      if(item){
-      }
-
-
+      if (techSet.some(elem => selectedValues.has(elem))){
+        return key;
+      };
     })
-  })
-
-  // Object.entries(selectedFilters).forEach(([key, value]) => {
-    
-  //   jobs.forEach(elem => {
-  //     console.log(elem)
-
-  //   })
-  // })
-
-  
+  });
 };
-
-
-
-
-
-

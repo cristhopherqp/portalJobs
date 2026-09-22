@@ -13,8 +13,8 @@
     "id": 2,
     "title": "Analista de Datos",
     "company": "Data Driven Co.",
-    "technology": ["Python", "React", "Go"],
-    "location": "   ",
+    "technology": ["Python", "React", "Go", "Rust", ["Go", "C++"]],
+    "location": ["   ", "presencial"],
     "contract": "Tiempo completo",
     "level": "Semi-Senior",
     "description": "Búsqueda de analista con manejo de SQL y Python."

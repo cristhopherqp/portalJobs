@@ -3,7 +3,7 @@ export const extractFilters = (jobs, categories) => {
   const filterEntries = categories.map(key => {
   
     const rawValues = jobs.flatMap(job => job[key]);
-    
+
     //v3
     const uniqueMap = new Map();
 
@@ -37,7 +37,6 @@ export const extractFilters = (jobs, categories) => {
 
     //v1
     // return [elem, [...new Set(((data.flatMap(dato => dato[elem])).map(elem => elem.trim())).filter(Boolean))]];
-    
   });
   return Object.fromEntries(filterEntries);
 };

@@ -25,9 +25,11 @@ const init = async () => {
     if(!categorySet) return;
 
     const action = isChecked ? "add" : "delete";
-    categorySet[action](value);
+    categorySet[action](value.toLowerCase());
 
     updateFilterButtonLabel(category, categorySet.size);
+    
+    filterJobs(allJobs, activeFilters);
   });
   
 

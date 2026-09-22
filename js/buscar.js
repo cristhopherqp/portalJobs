@@ -32,8 +32,6 @@ const init = async () => {
     filterJobs(allJobs, activeFilters);
   });
   
-
-  
   try {
     allJobs = await fetchJobs();
     const filters = extractFilters(allJobs, FILTER_CATEGORIES);

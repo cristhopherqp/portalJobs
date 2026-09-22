@@ -1,10 +1,10 @@
 export const filterJobs = (jobs, selectedFilters) => {
-  const selectedCategories = [];
-  Object.entries(selectedFilters).forEach(([key, value]) => {
-    if (value.size > 0){
-      selectedCategories.push(key)
-    }
-  });
+
+  const selectedCategories = Object.keys(selectedFilters).filter(
+    category => selectedFilters[category].size > 0
+  )
+
+
   Object.entries(jobs).forEach(([key, job]) => {
     selectedCategories.forEach(category => {
 
@@ -12,8 +12,9 @@ export const filterJobs = (jobs, selectedFilters) => {
       const selectedValues = selectedFilters[category];
 
       if (techSet.some(elem => selectedValues.has(elem))){
-        return key;
+        console.log(key)
       };
     })
   });
 };
+

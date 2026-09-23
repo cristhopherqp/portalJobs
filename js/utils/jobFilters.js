@@ -4,16 +4,26 @@ export const filterJobs = (jobs, selectedFilters) => {
     category => selectedFilters[category].size > 0
   )
 
+  if (selectedCategories.length === 0) return jobs;
 
-  Object.entries(jobs).forEach(([key, job]) => {
-    selectedCategories.forEach(category => {
+  return jobs.filter(job => {
 
-      const techSet = [job[category]].flat(Infinity).map(elem => String(elem).toLowerCase().trim());
+    return selectedCategories.every(category => {
+
+      const rawValue = job[category] ;
+      if (rawValue == null) return false;
+
+      const categoryData = [rawValue]
+        .flat(Infinity)
+        .map(elem => String(elem).toLowerCase().trim())
+        .filter(Boolean);
+
       const selectedValues = selectedFilters[category];
+  
+      // Salvaguarda: si se iteran categorías sin filtros activos, retorna true para evitar que .every() descarte el trabajo por no tener qué comparar.
+      // if (!selectedValues || selectedValues.size === 0) return true;
 
-      if (techSet.some(elem => selectedValues.has(elem))){
-        console.log(key)
-      };
+      return categoryData.some(elem => selectedValues.has(elem))
     })
   });
 };

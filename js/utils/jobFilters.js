@@ -38,51 +38,33 @@ const getActiveCategories = (filters) => {
   return activeCategories;
 };
 
+export const filterJobs = (jobs, filters) => {
+  if (!Array.isArray(jobs)) return [];
 
+  const activeCategories = getActiveCategories(filters);
+  if (activeCategories.length === 0) return jobs;
 
-// const extractCategories = (selectedCategories) => {
-//   const result = [];
-//   for (const [key, value] of Object.entries(selectedCategories)){
-//     if (value.size > 0 ){
-//       result.push(key);
-//     }
-//   }
-//   return result;
-// };
+  return jobs.filter(job => {
+    return activeCategories.every(category => {
+      const rawValue = job[category];
+      if (rawValue == null) return false;
 
+      const categoryData = normalizeValues(rawValue);
+      const selectedValues = filters[category];
 
-
-
-
-export const filterJobs = () => {
-
+      return categoryData.some(elem => selectedValues.has(elem));
+    });
+  });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 // export const filterJobs = (jobs, selectedFilters) => {
-
 //   const selectedCategories = Object.keys(selectedFilters).filter(
 //     category => selectedFilters[category].size > 0
 //   )
-
 //   if (selectedCategories.length === 0) return jobs;
-
 //   return jobs.filter(job => {
-
 //     return selectedCategories.every(category => {
-
 //       const rawValue = job[category] ;
 //       if (rawValue == null) return false;
 

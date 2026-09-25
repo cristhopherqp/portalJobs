@@ -14,7 +14,7 @@ const activeFilters = {
   level: new Set()
 };
 
-let allJobs = [];
+const allJobs = [];
 
 const init = async () => {
 
@@ -29,7 +29,7 @@ const init = async () => {
 
     updateFilterButtonLabel(category, categorySet.size);
     
-    filterJobs(allJobs, activeFilters);
+    //filterJobs(allJobs, activeFilters);
   });
   
   try {

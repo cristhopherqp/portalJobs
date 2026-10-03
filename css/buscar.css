@@ -201,23 +201,6 @@ form {
   margin-top: -2px;
 }
 
-/* .dropdown-item {
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-
-  &:hover {
-    background-color: var(--input-bg);
-    color: var(--text-primary);
-  }
-} */
-
 /* Resultados y Tarjetas de Empleo */
 .results-section {
   margin-bottom: 2rem;
@@ -263,32 +246,42 @@ form {
   }
 }
 
-.job-card__header {
+.job-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 0.75rem;
 
-  h3 {
+  .job-card-title {
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--text-primary);
   }
 }
 
-.job-card__meta {
+.job-card-company {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.job-card-meta {
   font-size: 0.875rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
+  
 
-  span {
+  .text-info {
+    font-weight: 500;
+  }
+
+  .separator {
     margin: 0 0.25rem;
     opacity: 0.4;
   }
 }
 
-.job-card__body {
+.job-card-body {
   color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.5;

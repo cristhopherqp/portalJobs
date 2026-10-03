@@ -119,59 +119,51 @@
       </header>
 
       <div role="list" class="job-list">
-        
+
+        <template id="job-card-template">
+          <article class="job-card" role="listitem">
+            <header class="job-card-header">
+              <div>
+                <h3 class="job-card-title" data-field="title">Ingeniero de Software</h3>
+                <p class="job-card-company">Tech Solutions inc.</p>
+                <p   class="job-card-meta">
+                  <span class="text-info" data-field="level">Senior</span>
+                  <span class="separator">|</span> 
+                  <span class="text-info" data-field="location">Remoto</span>
+                  <span class="separator">|</span> 
+                  <span class="text-info" data-field="contract">Tiempo Completo</span>
+                </p>
+              </div>
+              <button type="button" class="btn-apply">Aplicar</button>
+            </header>
+            <p class="job-card-body" data-field="description">
+              Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.
+            </p>
+          </article>
+        </template>
+
         <article class="job-card" role="listitem">
-          <header class="job-card__header">
+          <header class="job-card-header">
             <div>
-              <h3>Ingeniero de Software</h3>
-              <p class="job-card__meta">Tech Solutions Inc. <span>|</span> Remoto</p>
+              <h3 class="job-card-title" data-field="role">Ingeniero de Software</h3>
+              <p class="job-card-company">Tech Solutions inc.</p>
+              <p class="job-card-meta">
+                <span class="text-info" data-field="level">Senior</span>
+                <span class="separator">|</span> 
+                <span class="text-info" data-field="location">Remoto</span>
+                <span class="separator">|</span> 
+                <span class="text-info" data-field="contract">Tiempo Completo</span>
+              </p>
             </div>
             <button type="button" class="btn-apply">Aplicar</button>
           </header>
-          <p class="job-card__body">
+          <p class="job-card-body" data-field="description">
             Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.
           </p>
         </article>
 
-        <article class="job-card" role="listitem">
-          <header class="job-card__header">
-            <div>
-              <h3>Analista de Datos</h3>
-              <p class="job-card__meta">Data Driven Co. <span>|</span> Ciudad de México</p>
-            </div>
-            <button type="button" class="btn-apply">Aplicar</button>
-          </header>
-          <p class="job-card__body">
-            Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.
-          </p>
-        </article>
-
-        <article class="job-card" role="listitem">
-          <header class="job-card__header">
-            <div>
-              <h3>Desarrollador de Aplicaciones Móviles</h3>
-              <p class="job-card__meta">Mobile Apps Ltd. <span>|</span> Guadalajara</p>
-            </div>
-            <button type="button" class="btn-apply">Aplicar</button>
-          </header>
-          <p class="job-card__body">
-            Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.
-          </p>
-        </article>
-
-        <article class="job-card" role="listitem">
-          <header class="job-card__header">
-            <div>
-              <h3>Ingeniero de DevOps</h3>
-              <p class="job-card__meta">Cloud Services SA <span>|</span> Remoto</p>
-            </div>
-            <button type="button" class="btn-apply">Aplicar</button>
-          </header>
-          <p class="job-card__body">
-            Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.
-          </p>
-        </article>
       </div>
+
     </section>
 
     <!-- Paginación -->

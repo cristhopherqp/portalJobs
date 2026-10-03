@@ -1,10 +1,27 @@
-const activeFilters = {
-  technology: new Set(),
-  location: new Set(),
-  contract: new Set(),
-  level: new Set()
-};
+const array  = ["value1", "value2", ["value3", null, "value 5"], "value5"];
 
-activeFilters.contract.add("Kim Minjeong");
 
-console.log(activeFilters)
+array.forEach(element => {
+
+  let value;
+
+  if (Array.isArray(element)){
+
+    value = element.reduce(element => {
+      
+      if (element){
+        return element
+      }
+    
+    })
+
+    console.log(value);
+    return;
+  };
+
+  value = element;
+
+  console.log(value)
+
+})
+

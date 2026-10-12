@@ -9,10 +9,12 @@ const sanitizeString = (value, toLower = false) => {
 
 // 2. Specialized Resolvers
 // Categorical fields for filters: always lowercase (toLower = true)
-const resolveCategoricalField = (value) => {
+const resolveCategoricalField = (value, logger = console.warn) => {
   const clean = (val) => sanitizeString(val, true);
 
   if (Array.isArray(value)) {
+    logger(`Array detected in a categorical field where string was expected, Received: ${JSON.stringify(value)}`)
+
     const validValues = value
       .map(clean)
       .filter((item) => item !== null);

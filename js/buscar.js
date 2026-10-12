@@ -27,6 +27,7 @@ const init = async () => {
 
   initDropdownEvents();
 
+  //Podriamos cambiar el evento change por un pa  trón observer.
   initFilterChangeEvents((category, value, isChecked) => {
     const categorySet = activeFilters[category];
     if(!categorySet) return;
@@ -35,8 +36,8 @@ const init = async () => {
     categorySet[action](value.toLowerCase());
     
     updateFilterButtonLabel(category, categorySet.size);
+
     applyAndRender();
-    
   });
   
   try {

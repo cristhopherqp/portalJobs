@@ -16,7 +16,7 @@ export const createJobCard = (job) => {
     // let valueData = job[fieldName] ? ;
 
     if(job[fieldName]){
-      console.log(job[fieldName]);
+      // console.log(job[fieldName]);
 
       job[fieldName]
 

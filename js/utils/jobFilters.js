@@ -1,24 +1,3 @@
-const normalizeValues = (values) => {
-  if (values == null){
-    console.warn(
-      `[normalizeValues]: Param 'values' is null or invalid.`, {values}
-    );
-    return [];
-  }
-
-  const result = [];
-
-  for (const elem of [values].flat(Infinity)){
-    if (!elem) continue;
-
-    const cleaned = String(elem).trim().toLowerCase();
-    if(cleaned){
-      result.push(cleaned);
-    };
-  };
-  return result
-};
-
 const getActiveCategories = (filters) => {
   if (!filters || typeof filters !== "object" || Array.isArray(filters)){
     console.warn(
@@ -42,17 +21,25 @@ export const filterJobs = (jobs, filters) => {
   if (!Array.isArray(jobs)) return [];
 
   const activeCategories = getActiveCategories(filters);
+
   if (activeCategories.length === 0) return jobs;
 
   return jobs.filter(job => {
+
     return activeCategories.every(category => {
+
       const rawValue = job[category];
+
       if (rawValue == null) return false;
 
-      const categoryData = normalizeValues(rawValue);
       const selectedValues = filters[category];
+      console.log(selectedValues);
 
-      return categoryData.some(elem => selectedValues.has(elem));
+      // console.log(selectedValues);
+
+      // category.some(elem => selectedValues.has(elem));
+
+
     });
   });
 };

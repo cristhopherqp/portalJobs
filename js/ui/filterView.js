@@ -77,27 +77,3 @@ export const updateFilterButtonLabel = (category, count) => {
 
   span.textContent = count > 0 ? `${defaultLabel} (${count})` : defaultLabel;
 };
-
-//DEPRECATED
-// export const updateFilterButtonLabel = (activeFilters) => {
-//   document.querySelectorAll(".dropdown").forEach(dropdown => {
-//     const btn = dropdown.querySelector(".dropdown-btn");
-//     const menu = dropdown.querySelector(".dropdown-menu");
-//     if (!btn || !menu) return;
-
-//     const category = menu.dataset.filter;
-//     const defaultLabel = btn.dataset.default;
-
-//     const span = btn.querySelector("span");
-//     const count = activeFilters[category]?.size ?? 0;
-
-//     if (!span || !defaultLabel) return;
-
-//     if (count > 0) {
-//       span.textContent = `${defaultLabel} (${count})`;
-//       return;
-//     }
-
-//     span.textContent = defaultLabel;
-//   });
-// };

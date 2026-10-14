@@ -63,7 +63,8 @@ const normalizeJob = (rawJob, logger = console.warn) => {
     id,
     title,
 
-    company: sanitizeString(rawJob.company) ?? '',
+    //company: sanitizeString(rawJob.company) ?? '',
+    company: resolveCategoricalField(rawJob.company),
     description: sanitizeString(rawJob.description) ?? '',
 
     technology: resolveTechnologyField(rawJob.technology),

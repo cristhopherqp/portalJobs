@@ -19,7 +19,7 @@ let allJobs = [];
 
 const applyAndRender = () => {
   const visibleJobs = filterJobs(allJobs, activeFilters);
-
+  console.log(visibleJobs);
   //renderJobs(visibleJobs);
   createJobCard(allJobs[2]);
 };

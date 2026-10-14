@@ -27,20 +27,19 @@ export const filterJobs = (jobs, filters) => {
   return jobs.filter(job => {
 
     return activeCategories.every(category => {
+      
+      const jobValue = job[category];
+      const categoryValue = filters[category];
 
-      const rawValue = job[category];
+      if (!jobValue) return false;
 
-      if (rawValue == null) return false;
-
-      const selectedValues = filters[category];
-      console.log(selectedValues);
-
-      // console.log(selectedValues);
-
-      // category.some(elem => selectedValues.has(elem));
-
-
+      if(Array.isArray(jobValue)){
+        return jobValue.some(value => categoryValue.has(value))
+      }
+      return categoryValue.has(jobValue);
     });
+
   });
 };
+
 

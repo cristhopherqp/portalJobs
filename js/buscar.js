@@ -43,7 +43,7 @@ const init = async () => {
     allJobs = await fetchJobs();
     const filters = extractFilters(allJobs, FILTER_CATEGORIES);
     renderFilters(filters);
-    renderJobs(allJobs);
+    applyAndRender();
   } catch (error) {
     console.error("Error al iniciar filtros", error);
     renderFiltersError();

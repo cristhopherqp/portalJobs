@@ -3,7 +3,7 @@ import { extractFilters } from "./utils/filters.js"
 import { filterJobs } from "./utils/jobFilters.js";
 import { renderFilters, renderFiltersError, updateFilterButtonLabel } from "./ui/filterView.js";
 import { initDropdownEvents, initFilterChangeEvents } from "./ui/dropdown.js";
-import {createJobCard} from "./ui/jobView.js"
+import { renderJobs } from "./ui/jobView.js"
 
 const FILTER_CATEGORIES = ["company", "technology", "location", "contract", "level"];
 
@@ -19,9 +19,7 @@ let allJobs = [];
 
 const applyAndRender = () => {
   const visibleJobs = filterJobs(allJobs, activeFilters);
-  console.log(visibleJobs);
-  //renderJobs(visibleJobs);
-  createJobCard(allJobs[2]);
+  renderJobs(visibleJobs);
 };
 
 const init = async () => {

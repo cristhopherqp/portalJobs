@@ -38,19 +38,6 @@ export const renderFilters = (filters) => {
     })
     
     menuList.replaceChildren(fragment);
-
-    // options.forEach(value => {
-    //   const li = document.createElement("li");
-    //   const button = document.createElement("button");
-      
-    //   button.type = "button";
-    //   button.className = "dropdown-item";
-    //   button.textContent = value;
-
-    //   li.appendChild(button);
-    //   fragment.appendChild(li);
-    // });
-  
   });
 };
 

@@ -17,6 +17,8 @@ const createJobCard = (job) => {
 
 export const renderJobs = (jobs) => {
 
+  
+
   const jobsContainer = document.querySelector(".job-list")
   if (!jobsContainer) return;
 

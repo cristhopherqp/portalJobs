@@ -98,3 +98,10 @@ export const normalizeVariousJobs = (jobs, logger = console.warn) => {
 
   return validJobs;
 };
+
+// Format to Capital Case
+export const formatTitleCase = (text) => {
+  if (typeof text !== "string" || !text) return "";
+  return text.replace(/(?:^|[\s-])\p{L}/gu, (char) => char.toUpperCase());
+};
+

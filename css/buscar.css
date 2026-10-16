@@ -172,7 +172,8 @@ form {
 .dropdown-text {
   order: 1;
   font-size: 0.9rem;
-  color: white
+  color: white;
+  text-transform: capitalize;
 }
 
 /* Checkbox al extremo derecho */
@@ -264,6 +265,7 @@ form {
   color: var(--text-secondary);
   font-size: 1rem;
   margin-top: 0.25rem;
+  text-transform: capitalize;
 }
 
 .job-card-meta {
@@ -273,6 +275,7 @@ form {
 
   .text-info {
     font-weight: 500;
+    text-transform: capitalize;
   }
 
   .separator {

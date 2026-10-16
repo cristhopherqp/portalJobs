@@ -36,6 +36,7 @@ export const filterJobs = (jobs, filters) => {
       if(Array.isArray(jobValue)){
         return jobValue.some(value => categoryValue.has(value))
       }
+      
       return categoryValue.has(jobValue);
     });
 

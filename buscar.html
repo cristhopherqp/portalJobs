@@ -43,16 +43,26 @@
       <h2>Encuentra tu próximo trabajo</h2>
       <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-      <form role="search">
+      <form role="search" id="search-form">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input required type="text" placeholder="Buscar trabajos, empresas o habilidades">
+          
+          <input 
+            type="text" 
+            id="search-input"
+            name="query"
+            placeholder="Buscar trabajos, empresas o habilidades"
+            aria-label="Buscar trabajos, empresas o habilidades"
+            autocomplete="off"
+          >
         </div>
       </form>
+      
     </section>
 
     <!-- Filtros -->
@@ -132,7 +142,7 @@
                   <span class="text-info" data-field="contract"></span>
                 </p>
               </div>
-              <button type="button" class="btn-apply"></button>
+              <button type="button" class="btn-apply">Aplicar</button>
             </header>
             <p class="job-card-body" data-field="description"></p>
           </article>

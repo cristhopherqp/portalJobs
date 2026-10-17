@@ -3,7 +3,9 @@ import { extractFilters } from "./utils/filters.js"
 import { filterJobs } from "./utils/jobFilters.js";
 import { renderFilters, renderFiltersError, updateFilterButtonLabel } from "./ui/filterView.js";
 import { initDropdownEvents, initFilterChangeEvents } from "./ui/dropdown.js";
-import { renderJobs } from "./ui/jobView.js"
+import { renderJobs } from "./ui/jobView.js";
+import { initSearchEvents } from "./ui/searchView.js";
+
 
 const FILTER_CATEGORIES = ["company", "technology", "location", "contract", "level"];
 
@@ -37,6 +39,8 @@ const init = async () => {
     updateFilterButtonLabel(category, categorySet.size);
 
     applyAndRender();
+    initSearchEvents();
+    
   });
   
   try {

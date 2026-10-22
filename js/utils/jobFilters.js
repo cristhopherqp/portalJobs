@@ -11,7 +11,7 @@ const cleanText = (text) => {
 const tokenizeQuery = (query) => {
   if (typeof query !== "string") return [];
   return cleanText(query)
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/[^\p{L}\p{N}\s+#]/gu, " ")
     .trim()
     .split(/\s+/)
     .filter((token) => token.length > 0 && !STOP_WORDS.has(token));

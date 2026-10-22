@@ -10,22 +10,20 @@ export const initSearchEvents = (onSearch) => {
   // 1. Búsqueda en tiempo real mientras escribe
   searchInput.addEventListener("input", (e) => {
     clearTimeout(timeoutId);
-
     timeoutId = setTimeout(() => {
       if (onSearch) {
         onSearch(e.target.value.trim());
       }
-    }, 300);
+    }, 2000);
   });
 
   // 2. Si presiona Enter, cancelamos la espera y buscamos de inmediato
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
+    clearTimeout(timeoutId);
     if (onSearch) {
       onSearch(searchInput.value.trim());
     }
-
   })
   
 };

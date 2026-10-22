@@ -21,7 +21,7 @@ export const initDropdownEvents = () => {
   });
 };
 
-export const initFilterChangeEvents = (onFilterChange) => {
+export const listenFilterChanges = (onFilterChange) => {
   document.addEventListener("change", (e) => {
     if (!e.target.matches(".dropdown-checkbox")) return;
 

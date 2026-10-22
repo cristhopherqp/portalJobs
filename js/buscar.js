@@ -18,17 +18,18 @@ const activeFilters = {
 };
 
 let allJobs = [];
+let currentSearchText = "";
 
 const applyAndRender = () => {
-  const visibleJobs = filterJobs(allJobs, activeFilters);
+  const visibleJobs = filterJobs(allJobs, activeFilters, currentSearchText);
   renderJobs(visibleJobs);
 };
 
 const init = async () => {
 
   initDropdownEvents();
-
-  //Podriamos cambiar el evento change por un pa  trón observer.
+  
+  //Podriamos cambiar el evento change por un patrón observer.
   initFilterChangeEvents((category, value, isChecked) => {
     const categorySet = activeFilters[category];
     if(!categorySet) return;
@@ -39,10 +40,13 @@ const init = async () => {
     updateFilterButtonLabel(category, categorySet.size);
 
     applyAndRender();
-    initSearchEvents();
-    
   });
-  
+
+  initSearchEvents((searchText) => {
+    currentSearchText = searchText;
+    applyAndRender();
+  });
+
   try {
     allJobs = await fetchJobs();
     const filters = extractFilters(allJobs, FILTER_CATEGORIES);

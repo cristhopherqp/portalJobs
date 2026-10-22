@@ -1,8 +1,17 @@
-export const initSearchEvents = () => {
-  const form = document.querySelector("#search-form");
+export const initSearchEvents = (onSearch) => {
+  const searchForm = document.querySelector("#search-form");
+  if (!searchForm) return;
 
-  const input = form.querySelector("#search-input");
+  const searchInput = searchForm.querySelector("#search-input");
+  if (!searchInput) return;
 
-  console.log(input.textContent);
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (onSearch) {
+      onSearch(searchInput.value.trim());
+    }
+
+  })
   
 };

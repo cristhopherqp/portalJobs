@@ -11,3 +11,4 @@
 ## Hecho
 - No desaparece nada al deseleccionar
 - Formato del texto
+- Busqueda por texto y filtros

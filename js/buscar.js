@@ -32,10 +32,11 @@ const init = async () => {
   //Podriamos cambiar el evento change por un patrón observer.
   initFilterChangeEvents((category, value, isChecked) => {
     const categorySet = activeFilters[category];
+    
     if(!categorySet) return;
-
+    
     const action = isChecked ? "add" : "delete";
-    categorySet[action](value.toLowerCase());
+    categorySet[action](value);
     
     updateFilterButtonLabel(category, categorySet.size);
 

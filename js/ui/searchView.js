@@ -14,7 +14,7 @@ export const initSearchEvents = (onSearch) => {
       if (onSearch) {
         onSearch(e.target.value.trim());
       }
-    }, 2000);
+    }, 300);
   });
 
   // 2. Si presiona Enter, cancelamos la espera y buscamos de inmediato

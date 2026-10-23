@@ -1,9 +1,9 @@
 import { fetchJobs } from "./api/jobsApi.js";
 import { extractFilters } from "./utils/filters.js"
-import { filterJobs } from "./utils/jobFilters.js";
+import { filterJobs, getActiveCategories } from "./utils/jobFilters.js";
 import { renderFilters, renderFiltersError, updateFilterButtonLabel } from "./ui/filterView.js";
 import { initDropdownEvents, listenFilterChanges } from "./ui/dropdown.js";
-import { renderJobs } from "./ui/jobView.js";
+import { renderJobs, updateResultCounter } from "./ui/jobView.js";
 import { initSearchEvents } from "./ui/searchView.js";
 
 
@@ -22,6 +22,18 @@ let currentSearchText = "";
 
 const applyAndRender = () => {
   const visibleJobs = filterJobs(allJobs, activeFilters, currentSearchText);
+
+  let jobsCount = visibleJobs.length;
+  console.log(jobsCount);
+  
+  //const hasActiveFilters = Object.values(activeFilters).some(set => set.size > 0);
+  
+  if (getActiveCategories(activeFilters).length === 0 && currentSearchText === ""){
+    jobsCount = null;
+  };
+  
+  updateResultCounter(jobsCount);
+
   renderJobs(visibleJobs);
 };
 

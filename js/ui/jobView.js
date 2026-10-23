@@ -13,6 +13,21 @@ const createJobCard = (job) => {
   return jobCard;
 };
 
+export const updateResultCounter = (jobsCount) => {
+
+  const resultsCounter = document.querySelector("#results-counter");
+  const resultsCount = resultsCounter.querySelector("#results-count");
+
+  if (jobsCount === null){
+    resultsCounter.hidden = true;
+    return;
+  }
+
+  resultsCounter.hidden = false;
+  resultsCount.textContent = jobsCount
+
+};
+
 export const renderJobs = (jobs) => {
 
   const jobsContainer = document.querySelector(".job-list")

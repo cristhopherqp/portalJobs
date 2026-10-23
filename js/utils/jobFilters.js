@@ -17,7 +17,7 @@ const tokenizeQuery = (query) => {
     .filter((token) => token.length > 0 && !STOP_WORDS.has(token));
 };
 
-const getActiveCategories = (filters) => {
+export const getActiveCategories = (filters) => {
   if (!filters || typeof filters !== "object" || Array.isArray(filters)){
     console.warn(
       `[getActiveCategories]: Param 'filters' is undefined or invalid. Defaulting to an empty list.`, {filters}

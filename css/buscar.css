@@ -238,6 +238,13 @@ form {
   overflow: hidden;
 }
 
+.job-list:has(.empty-state-title) {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
 .job-card {
   padding: 1.25rem;
   border-bottom: 1px solid var(--border);

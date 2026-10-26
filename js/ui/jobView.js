@@ -13,12 +13,24 @@ const createJobCard = (job) => {
   return jobCard;
 };
 
-export const updateResultCounter = (jobsCount) => {
+const createEmptyState = () => {
+
+  const title = Object.assign(document.createElement("h3"), {
+    className: "empty-state-title",
+    textContent: "No obtuvimos resultados"
+  });
+
+  return title;
+};
+
+export const updateResultCounter = (jobsCount, isFiltering) => {
 
   const resultsCounter = document.querySelector("#results-counter");
-  const resultsCount = resultsCounter.querySelector("#results-count");
+  const resultsCount = resultsCounter?.querySelector("#results-count");
 
-  if (jobsCount === null){
+  if (!resultsCounter || !resultsCount) return;
+
+  if (!isFiltering){
     resultsCounter.hidden = true;
     return;
   }
@@ -32,6 +44,12 @@ export const renderJobs = (jobs) => {
 
   const jobsContainer = document.querySelector(".job-list")
   if (!jobsContainer) return;
+
+  
+  if (jobs.length === 0) {
+    jobsContainer.replaceChildren(createEmptyState());
+    return;
+  }
 
   const fragment = document.createDocumentFragment();
 

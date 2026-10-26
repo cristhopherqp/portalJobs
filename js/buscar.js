@@ -22,18 +22,9 @@ let currentSearchText = "";
 
 const applyAndRender = () => {
   const visibleJobs = filterJobs(allJobs, activeFilters, currentSearchText);
-
-  let jobsCount = visibleJobs.length;
-  console.log(jobsCount);
+  const isFiltering = Object.values(activeFilters).some(set => set.size > 0) || currentSearchText.trim().length > 0;
   
-  //const hasActiveFilters = Object.values(activeFilters).some(set => set.size > 0);
-  
-  if (getActiveCategories(activeFilters).length === 0 && currentSearchText === ""){
-    jobsCount = null;
-  };
-  
-  updateResultCounter(jobsCount);
-
+  updateResultCounter(visibleJobs.length, isFiltering);
   renderJobs(visibleJobs);
 };
 
